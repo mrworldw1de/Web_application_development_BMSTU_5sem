@@ -1,0 +1,55 @@
+{% extends 'doge/base.html' %}
+{% load static %}
+{% block title %}
+Контактная информация
+{% endblock  %}
+{% block content %}
+<style>
+   .leftimg {
+    float:left;
+    margin: 7px 7px 7px 0; 
+   }
+   
+</style>
+<h3 id="preview-fullname" style="text-transform: capitalize;">Робертс Даниил Александрович</h3>
+<div class="classic">
+ <div class="flexbox">
+<ul style="text-align: left;">
+  <img src='{% static 'me.jpg'  %}' alt="Лейтенант Бокатуев"  height="390" class="leftimg">  
+	<div class="right">
+      <p ><span>Программист-разработчик</span></p>
+          <p><b>Телефон:</b> <span>+7 (920) 915-00-54</span></p>
+      <p><b>Электронная почта:</b> <span>roberts.ak.lost@gmail.ru</span></p>
+    </div>
+</ul></p>
+    </p>   
+  </div>
+  <h4 >Личная информация</h4>
+  <div>
+    <p><b>Гражданство:</b> <span>Российская Федерация</span></p>
+    <p><b>Место проживания:</b> <span>г. Москва</span></p>
+    <p><b>Образование:</b> <span>Студент 3 курса</span></p>
+    <p><b>Дата рождения:</b> <span>22 мая 2001 (20 лет)</span></p>
+    <p><b>Пол:</b> <span>Мужской</span></p>
+    </p>
+  </div></p>
+  <br><br>
+ 
+  <h4 >Образование</h4>
+  <div class="list">
+    <div>
+      <p><b>Учебное заведение:</b> <span>Московский государственный технический университет им. Н. Э. Баумана, г. Москва</span></p>
+      <p><b>Факультет:</b> <span>Системы обработки информации и управления</span></p>
+      <p><b>Специальность:</b> <span>Информатика и вычислительная техника</span></p>
+      <p><b>Форма обучения:</b> <span>Очная</span></p>
+    </div>
+  </div>
+  <h4 >Дополнительная информация</h4>
+  <div>
+    <p><b>Иностранные языки:</b> <span>Английский (intermediate), русский (носитель)</span></p>
+    <p><b>Компьютерные навыки:</b> <span>C++, Python, SQL, Linux, C#, Excel, PowerPoint.</span></p>
+    <p><b>Личные качества:</b></p>
+    <div class="multiline"><p>Отсутствие вредных привычек, ответственность, активность, аккуратность, оперативность, стрессоустойчивость, усидчивость.</p></div>
+  </div>
+</div>              
+{% endblock  %}
