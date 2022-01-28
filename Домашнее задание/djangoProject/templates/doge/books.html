@@ -1,0 +1,140 @@
+{% extends 'doge/base.html' %}
+{% load static %}
+{% block title1 %}
+Домашнее задание
+{% endblock  %}
+{% block title %}
+Домашнее задание
+{% endblock  %}
+{% block content %}
+<h1>Книги</h1>
+    <main class="container">
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+   {% for book in data.books %}
+       <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal"><a href="book/{{book.id}}">{{ book.name }}</a></h4>
+          </div>
+          <div class="card-body">
+            <a class="w-100 btn btn-lg btn-outline-primary" href="edit/{{book.id}}" role="button">Изменить »</a>
+              <hr />
+            <a class="w-100 btn btn-lg btn-outline-primary" href="delete_Book/{{book.id}}" role="button">Удалить »</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+<div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+ <form method="POST" action="create_book/" >
+        {% csrf_token %}
+        <containera style="    float: left;
+    width: 100%; ">
+        <h2>Добавление новой книги</h2>
+        <p>
+            <label>Введите название книги</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите описание</label><br>
+            <input type="text" name="discription" />
+        </p>
+        <p>
+            <label>Введите Введите ФИО автора</label><br>
+            <input type="text" name="bookauthorr"/>
+        </p>
+        <input type="submit" value="Сохранить" >
+        </containera>
+    </form>
+        </form>
+          </div>
+        </div>
+</div>
+   </div>
+</main>
+<hr>
+    <h1>Авторы</h1>
+    <main class="container">
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+   {% for authorr in data.author %}
+       <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal"><a href="book/{{authorr.idauthor}}">{{ authorr.authorname }}</a></h4>
+          </div>
+          <div class="card-body">
+            <a class="w-100 btn btn-lg btn-outline-primary" href="edit_Author/{{authorr.idauthor}}" role="button">Изменить »</a>
+              <hr />
+            <a class="w-100 btn btn-lg btn-outline-primary" href="delete_Author/{{authorr.idauthor}}" role="button">Удалить »</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+
+   </div>
+</main>
+
+<hr />
+<div class="col" align="center">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+    <form method="POST" action="create/">
+        {% csrf_token %}
+
+    <h2>Добавление нового автора</h2>
+    <p>
+        <label>Введите ФИО автора</label><br>
+        <input type="text" name="Authorname" />
+    </p>
+        <p>
+        <label>Введите информацию об авторе</label><br>
+        <input type="text" name="Authorbio" />
+    </p>
+    <input type="submit" value="Сохранить" >
+    </form>
+          </div>
+        </div>
+</div>
+{% for author in data.author %}
+        <h3>Произведения {{ author.authorname }}:</h3>
+            {% for book in data.books %}
+                {% if author.authorname == book.bookauthor.authorname %}
+                    <li>{{book.name}}</li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<h1>Собаки</h1>
+{% for dog in data.dogs %}
+<table>
+   <td> <a href="dog/{{dog.id}}">{{ dog.name }}</a></td>
+</table>
+   {% empty %}
+       <li>Список пуст</li>
+   {% endfor %}
+    </hr>
+<hr><h1>Коты</h1>
+{% for cat in data.cats %}
+<table>
+   <td> <a href="kit/{{cat.id}}">{{ cat.name }}</a></td>
+</table>
+   {% empty %}
+       <li>Список пуст</li>
+   {% endfor %}</hr>
+{% endblock %}

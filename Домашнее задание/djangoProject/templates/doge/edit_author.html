@@ -1,0 +1,29 @@
+{% extends 'doge/base.html' %}
+{% load static %}
+{% block title1 %}
+Книга
+{% endblock  %}
+{% block title %}
+Книга
+{% endblock  %}
+{% block content %}
+
+
+        <form method="POST"> {% csrf_token %}
+            <p>
+                <label>ФИО автора</label>
+                <br>
+                <input type="text" name="name" value="{{author.authorname}}" />
+            </p>
+            <p>
+                <label>Введите информацию о писателе</label><br>
+                <input type="text" name="discription" value="{{author.authorbio}}" />
+            </p>
+                <input type="submit" value="Сохранить" >
+        </form>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'doge/base.html' %}
+{% load static %}
+{% block title1 %}
+Книга
+{% endblock  %}
+{% block title %}
+Книга
+{% endblock  %}
+{% block content %}
+    <div>Название: {{ data.book.name }}</div>
+        <div>Описание: {{ data.book.dicription }}</div>
+        <div>Автор: {{ data.book.bookauthor.authorname }}</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'doge/base.html' %}
+{% load static %}
+{% block title1 %}
+Кот
+{% endblock  %}
+{% block title %}
+Кот
+{% endblock  %}
+{% block content %}
+    <div>Название породы: {{ data.cat.name }}</div>
+        <div>Описание: {{ data.cat.dicription }}</div>
+{% endblock %}

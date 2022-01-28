@@ -1,0 +1,12 @@
+{% extends 'doge/base.html' %}
+{% load static %}
+{% block title1 %}
+Собака
+{% endblock  %}
+{% block title %}
+Собака
+{% endblock  %}
+{% block content %}
+    <div>Название породы: {{ data.dog.name }}</div>
+        <div>Описание: {{ data.dog.dicription }}</div>
+{% endblock %}
